@@ -48,13 +48,13 @@ class Program
         {
             //Computes the sum of the numbers
             int sum = 0;
-            
+
             //Traverse the list of numbers
             foreach (int number in numbers)
             {
                 //Computes the sum of numbers in the list.
                 sum += number;
-                
+
                 //Computes the larger number.
                 if (number > largerNumber)
                 {
@@ -62,7 +62,7 @@ class Program
                 }
 
             }
-            
+
             //Computes the average of the numbers.
             float average = ((float)sum) / numbers.Count;
 
