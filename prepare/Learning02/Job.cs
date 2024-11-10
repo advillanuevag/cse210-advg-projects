@@ -6,4 +6,10 @@ public class Job
     public string _startYear;
     public string _endYear;
 
+    //Declare DisplayJobDetails() Method to show the class variables:
+    public void DisplayJobDetails()
+    {
+        Console.WriteLine($"{_jobTitle} ({_companyName}) {_startYear} - {_endYear}")
+    }
+
 }
