@@ -5,30 +5,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*
-        Author: Alberto Villanueva Gudiño
-        Purpose: Creating a design for a Developer project about 
-                 creating a journal. In order to create the journal
-                 program the classes Entry, Journal and GetRandomPrompt
-                 will be created.
-                 The program must show a menu with the following options:
-                 1) Write
-                 2) Display
-                 3) Load
-                 4) Save
-                 5) Quit
-                 What would you like to do?:
-        */
-
         PromptGenerator promptGenerator = new PromptGenerator();
         string randomPrompt = promptGenerator.GetRandomPrompt();
         Console.WriteLine($"The RandomPrompt is: {randomPrompt}");
 
-
-        //Creates an instance of the object Journal named myJournal:
         Journal myJournal = new Journal();
 
-        //The following code shows the menu options:
         int choice;
         do
         {
@@ -49,45 +31,42 @@ class Program
 
                     Entry newEntry = new Entry();
 
-                    PromptGenerator promptGenerator = new PromptGenerator();
-                    string randomPrompt = promptGenerator.GetRandomPrompt();
+                    // Reuse the existing instance
+                    randomPrompt = promptGenerator.GetRandomPrompt();
 
                     Console.WriteLine($"Prompt: {randomPrompt}");
-
                     string userPrompt = Console.ReadLine();
 
                     newEntry._userResponse = userPrompt;
                     newEntry._randomPrompt = randomPrompt;
-                    newEntry._date = "17/10/2024";
+                    newEntry._date = DateTime.Now.ToString("dd/MM/yyyy"); // Dynamic date
 
                     myJournal.AddEntry(newEntry);
+                    break;
 
-                    break;
                 case 2:
-                    Console.WriteLine("Displayin Journal...");
-                    myJournal.DispalyAll();
+                    Console.WriteLine("Displaying Journal...");
+                    myJournal.DisplayAll(); // Fixed typo
                     break;
+
                 case 3:
                     Console.WriteLine("Load option selected.");
                     myJournal.LoadFromFile();
                     break;
+
                 case 4:
                     Console.WriteLine("Save option selected.");
                     myJournal.SaveToFile();
                     break;
+
                 case 5:
                     Console.WriteLine("Quitting...");
                     break;
+
                 default:
                     Console.WriteLine("Invalid choice. Please try again.");
                     break;
             }
         } while (choice != 5);
-
-
-
-
-
-
     }
 }

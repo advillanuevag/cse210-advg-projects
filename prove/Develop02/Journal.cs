@@ -11,13 +11,13 @@ public class Journal
     }
 
 
-    public void DispalyAll()
+    public void DisplayAll()
     {
         //Display a message indicating that Journal is being printed:
         Console.WriteLine("Printing your Journal...");
         //Traverse the List _entries and acces DisplayEntry() method
         //located in Entry class by dot notation.
-        foreach(Entry entry in _entries)
+        foreach (Entry entry in _entries)
         {
             entry.DisplayEntry();
         }
@@ -32,10 +32,10 @@ public class Journal
         string fileName = Console.ReadLine();
         Console.WriteLine("Saving to file...");
 
-        using(StreamWriter outputFile = new StreamWriter(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             outputFile.WriteLine("Date || Prompt || Response");
-            foreach(Entry entry in _entries)
+            foreach (Entry entry in _entries)
             {
                 outputFile.WriteLine($"{entry._date} || {entry._randomPrompt} || {entry._userResponse}");
             }
@@ -52,7 +52,7 @@ public class Journal
 
         Console.WriteLine("Loading from file...");
         string[] lines = System.IO.File.ReadAllLines(fileName);
-        foreach(string line in lines)
+        foreach (string line in lines)
         {
             string[] parts = line.Split("||");
             string _date = parts[0];
@@ -63,7 +63,7 @@ public class Journal
             Console.WriteLine("File loaded succesfully!");
 
         }
-        
+
 
     }
 }
