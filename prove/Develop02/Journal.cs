@@ -46,6 +46,23 @@ public class Journal
 
     public void LoadFromFile()
     {
+        Console.WriteLine("");
+        Console.WriteLine("What is the file name?: ");
+        string fileName = Console.ReadLine();
+
+        Console.WriteLine("Loading from file...");
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+        foreach(string line in lines)
+        {
+            string[] parts = line.Split("||");
+            string _date = parts[0];
+            string _randomPrompt = parts[1];
+            string _userResponse = parts[2];
+
+            Console.WriteLine($"{_date} || {_randomPrompt} || {_userResponse}");
+            Console.WriteLine("File loaded succesfully!");
+
+        }
         
 
     }
