@@ -20,6 +20,11 @@ class Program
                  What would you like to do?:
         */
 
+        PromptGenerator promptGenerator = new PromptGenerator();
+        string randomPrompt = promptGenerator.GetRandomPrompt();
+        Console.WriteLine($"The RandomPrompt is: {randomPrompt}");
+
+
         //Creates an instance of the object Journal named myJournal:
         Journal myJournal = new Journal();
 
