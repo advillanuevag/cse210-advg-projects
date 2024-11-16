@@ -20,4 +20,14 @@ public class Journal
         }
 
     }
+
+    public void SaveToFile()
+    {
+
+    }
+
+    public void LoadFromFile()
+    {
+        
+    }
 }
