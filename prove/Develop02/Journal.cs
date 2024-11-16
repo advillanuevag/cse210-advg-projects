@@ -9,4 +9,15 @@ public class Journal
         _entries.Add(newEntry);
 
     }
+
+
+    public void DispalyAll()
+    {
+        Console.WriteLine("Printing your Journal...");
+        foreach(Entry entry in _entries)
+        {
+            entry.DisplayEntry();
+        }
+
+    }
 }
