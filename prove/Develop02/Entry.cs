@@ -9,7 +9,7 @@ public class Entry
     public void DisplayEntry()
     {
         Console.WriteLine("");
-        Console.WriteLine($"Date:v{_date} - Prompt: {_randomPrompt}");
+        Console.WriteLine($"Date:{_date} - Prompt: {_randomPrompt}");
         Console.WriteLine($"{_userResponse}");
         Console.WriteLine("");
     }
